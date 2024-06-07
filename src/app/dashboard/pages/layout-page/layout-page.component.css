@@ -1,0 +1,9 @@
+.example-spacer {
+  flex: 1 1 auto;
+
+}
+
+.custom_button{
+  display: flex;
+  gap: 1rem;
+}

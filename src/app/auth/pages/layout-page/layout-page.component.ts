@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-layout-page',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./layout-page.component.css']
 })
 export class LayoutPageComponent {
+  constructor(
+    private router:Router,
+  ){}
 
+  goBack(){
+    this.router.navigateByUrl('/dashboard')
+  }
 }

@@ -1,1 +1,16 @@
-<p>layout-page works!</p>
+<mat-toolbar color="primary">
+  <span>Gestion de Recursos Humanos</span>
+  <span class="example-spacer"></span>
+  <div class="custom_button">
+    <button mat-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+    (click)="goToLogin()"
+    >
+      Iniciar Sesion
+    </button>
+    <button mat-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+    (click)="goToRegister()"
+    >
+      Registrase
+    </button>
+  </div>
+</mat-toolbar>

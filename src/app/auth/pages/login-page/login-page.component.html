@@ -1,0 +1,24 @@
+<div class="text-center">
+  <h2>Inicie Sesion</h2>
+  <form
+  [formGroup]="loginForm"
+  (ngSubmit)="onLogin()"
+  class="mx-auto w-50 form_rounded_border"
+  action="">
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput type="text" placeholder="Ex. : gino@gmail.com" formControlName="email">
+      <mat-error>Este campo es obligatorio</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Contraseña</mat-label>
+      <input matInput type="text" placeholder="Ex. : Abc123" formControlName="pass">
+      <mat-error>Este campo es obligatorio</mat-error>
+    </mat-form-field>
+    <button type="submit" class="w-50" mat-raised-button color="primary" (click)="onLogin()">
+      <mat-icon>login</mat-icon>
+      Iniciar
+    </button>
+  </form>
+</div>
