@@ -10,6 +10,18 @@ import { DepartmentsPageComponent } from './pages/departments-page/departments-p
 import { VacanciesPageComponent } from './pages/vacancies-page/vacancies-page.component';
 import { MaterialModule } from '../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MyPerfilComponent } from './components/my-perfil/my-perfil.component';
+import { PeriodsPageComponent } from './pages/periods-page/periods-page.component';
+import { ContractTypesPageComponent } from './pages/contract-types-page/contract-types-page.component';
+import { BranchesPageComponent } from './pages/branches-page/branches-page.component';
+import { DepartmentsBranchesPageComponent } from './pages/departments-branches-page/departments-branches-page.component';
+import { PositionsPageComponent } from './pages/positions-page/positions-page.component';
+import { ApplicantsPageComponent } from './pages/applicants-page/applicants-page.component';
+import { EmployeesPageComponent } from './pages/employees-page/employees-page.component';
+import { ApplicationsPageComponent } from './pages/applications-page/applications-page.component';
+import { MyMenuExpansionPanelComponent } from './components/my-menu-expansion-panel/my-menu-expansion-panel.component';
+import { CreateBranchComponent } from './components/enterprise/create-branch/create-branch.component';
+import { AllBranchComponent } from './components/enterprise/all-branch/all-branch.component';
 
 
 @NgModule({
@@ -19,7 +31,19 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProfessionsPageComponent,
     ManagementsPageComponent,
     DepartmentsPageComponent,
-    VacanciesPageComponent
+    VacanciesPageComponent,
+    MyPerfilComponent,
+    PeriodsPageComponent,
+    ContractTypesPageComponent,
+    BranchesPageComponent,
+    DepartmentsBranchesPageComponent,
+    PositionsPageComponent,
+    ApplicantsPageComponent,
+    EmployeesPageComponent,
+    ApplicationsPageComponent,
+    MyMenuExpansionPanelComponent,
+    CreateBranchComponent,
+    AllBranchComponent
   ],
   imports: [
     CommonModule,

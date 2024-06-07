@@ -1,0 +1,28 @@
+
+<div>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title><strong>Bienvenido, </strong>{{userData.employee.names}}</mat-card-title>
+      <mat-card-subtitle><strong>Correo:</strong> {{userData.email}}</mat-card-subtitle>
+      <mat-card-subtitle><strong>Telefono:</strong> {{userData.employee.cellphone}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-divider></mat-divider>
+      <mat-card-title>Datos</mat-card-title>
+      <mat-card-subtitle>Apellidos: {{userData.employee.last_names}}</mat-card-subtitle>
+      <mat-card-subtitle>Direccion: {{userData.employee.address}}</mat-card-subtitle>
+      <mat-card-subtitle>Fecha de nacimiento: {{userData.employee.birthdate | json}}</mat-card-subtitle>
+      <mat-card-subtitle>Carnet: {{userData.employee.ci}}</mat-card-subtitle>
+      <mat-card-subtitle>Codigo: {{userData.employee.code}}</mat-card-subtitle>
+      <mat-card-subtitle>Profesion: {{userData.employee.profession.profession}}</mat-card-subtitle>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="d-flex gap-2">
+        <button mat-raised-button>Accion1</button>
+        <button mat-raised-button>Accion2</button>
+        <button mat-raised-button>Accion3</button>
+      </div>
+
+    </mat-card-actions>
+  </mat-card>
+</div>

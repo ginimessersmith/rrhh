@@ -1,6 +1,6 @@
 <mat-sidenav-container fullscreen>
 
-  <mat-sidenav #sidenav mode="push" [ngStyle]="{width:'250px'}">
+  <mat-sidenav #sidenav mode="over" [ngStyle]="{width:'300px'}">
 
     <mat-toolbar color="primary">
       <span>Menu</span>
@@ -8,14 +8,15 @@
     </mat-toolbar>
 
     <mat-nav-list>
-      <mat-list-item
+      <!-- <mat-list-item
         *ngFor="let item of sideBarItems"
         [routerLink]="item.url"
         (click)="sidenav.toggle()"
       >
         <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
         {{ item.label }}
-      </mat-list-item>
+      </mat-list-item> -->
+      <user-my-menu-expansion-panel></user-my-menu-expansion-panel>
     </mat-nav-list>
   </mat-sidenav>
 
@@ -25,7 +26,7 @@
       <mat-icon>menu</mat-icon>
     </button>
 
-    <span>Gestion de Recursos Humanos</span>
+    <span class="mx-2">Recursos Humanos</span>
 
     <span class="spacer"></span>
 

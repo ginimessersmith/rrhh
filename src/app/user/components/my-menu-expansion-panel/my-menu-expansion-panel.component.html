@@ -1,0 +1,16 @@
+<mat-accordion class="example-headers-align">
+  <mat-expansion-panel *ngFor="let item of list">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{item.name}}
+      </mat-panel-title>
+      <mat-panel-description>
+        <mat-icon>{{item.icon}}</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-divider></mat-divider>
+    <div *ngFor="let itemList of item.listPanel" class="ord_column mt-1">
+      <button mat-button (click)="goToRoute(itemList.router)">{{itemList.nameRouter}}</button>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
