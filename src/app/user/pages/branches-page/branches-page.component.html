@@ -6,7 +6,11 @@
   <button mat-raised-button color="accent" (click)="allBranch()">Mis Sucursales</button>
 </div>
 <!-- class="mt-2 d-flex justify-content-center align-items-center" -->
-<div class="mt-2">
-  <user-enterprise-create-branch *ngIf="isCreateBranch" ></user-enterprise-create-branch>
+<div class="mt-5">
+  <user-enterprise-create-branch
+  *ngIf="isCreateBranch"
+  (createBranchEmit)="changeCreateBranch($event)"
+  (allBranchEmit)="changeAllBranch($event)"
+  ></user-enterprise-create-branch>
   <user-enterprise-all-branch *ngIf="isAllBranch"></user-enterprise-all-branch>
 </div>

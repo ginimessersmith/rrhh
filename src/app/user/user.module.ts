@@ -26,6 +26,9 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { CreateEmployeeComponent } from './components/employee/create-employee/create-employee.component';
+import { CreateDepartmentComponent } from './components/enterprise/create-department/create-department.component';
+import { AllDepartmentComponent } from './components/enterprise/all-department/all-department.component';
+
 
 @NgModule({
   declarations: [
@@ -47,8 +50,9 @@ import { CreateEmployeeComponent } from './components/employee/create-employee/c
     MyMenuExpansionPanelComponent,
     CreateBranchComponent,
     AllBranchComponent,
-    CreateEmployeeComponent
-
+    CreateEmployeeComponent,
+    CreateDepartmentComponent,
+    AllDepartmentComponent
   ],
   imports: [
     CommonModule,

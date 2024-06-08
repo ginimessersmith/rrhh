@@ -16,7 +16,7 @@
       <input matInput type="password" placeholder="Ex. : Abc123" formControlName="pass">
       <mat-error>Este campo es obligatorio</mat-error>
     </mat-form-field>
-    <button type="submit" class="w-50" mat-raised-button color="primary" (click)="onLogin()">
+    <button type="submit" class="w-50" mat-raised-button color="primary" (click)="onLogin()" [disabled]="loginForm.invalid">
       <mat-icon>login</mat-icon>
       Iniciar
     </button>

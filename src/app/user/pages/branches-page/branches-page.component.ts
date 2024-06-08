@@ -23,4 +23,13 @@ export class BranchesPageComponent {
     this.isCreateBranch = false
     this.isAllBranch = true
   }
+
+  changeCreateBranch(newValue: boolean) {
+    this.isCreateBranch = newValue;
+  }
+
+  changeAllBranch(newValue: boolean) {
+    this.isAllBranch = newValue;
+  }
+
 }

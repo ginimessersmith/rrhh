@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environment/environment';
 import { CreateBranchInterface } from '../interfaces/branches/create-branch.interface';
+import { BranchResponseInterface } from '../interfaces/branches/branch.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +20,8 @@ export class BranchService {
     return this.http.post<boolean>(url, createBranchInterface)
   }
 
-  allBranch(){}
+  allBranch():Observable<BranchResponseInterface[]>{
+    const url = `${this.baseUrl}/branches`
+    return this.http.get<BranchResponseInterface[]>(url)
+  }
 }
