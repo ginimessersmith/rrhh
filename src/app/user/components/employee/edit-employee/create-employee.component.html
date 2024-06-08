@@ -1,0 +1,86 @@
+<form class="create-employee-form w-50" [formGroup]="createEmployeeForm" (ngSubmit)="onCreate()">
+  <h2>Nuevo Empleado</h2>
+  <div class="d-flex flex-column">
+    <mat-form-field>
+      <mat-label>Nombres</mat-label>
+      <input matInput formControlName="names" type="text" required>
+      <mat-error *ngIf="createEmployeeForm.get('names')?.hasError('required') && createEmployeeForm.get('names')?.touched">
+        Este campo es obligatorio
+      </mat-error>
+      <mat-error *ngIf="createEmployeeForm.get('names')?.hasError('minlength') && createEmployeeForm.get('names')?.touched">
+        Mínimo 2 caracteres
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Apellidos</mat-label>
+      <input matInput formControlName="last_names" type="text" required>
+      <mat-error *ngIf="createEmployeeForm.get('last_names')?.hasError('required') && createEmployeeForm.get('last_names')?.touched">
+        Este campo es obligatorio
+      </mat-error>
+      <mat-error *ngIf="createEmployeeForm.get('last_names')?.hasError('minlength') && createEmployeeForm.get('last_names')?.touched">
+        Mínimo 2 caracteres
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Género</mat-label>
+      <mat-select formControlName="genre" required>
+        <mat-option value="F">Femenino</mat-option>
+        <mat-option value="M">Masculino</mat-option>
+      </mat-select>
+      <mat-error *ngIf="createEmployeeForm.get('genre')?.hasError('required') && createEmployeeForm.get('genre')?.touched">
+        Este campo es obligatorio
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>CI</mat-label>
+      <input matInput formControlName="ci" type="number" required>
+      <mat-error *ngIf="createEmployeeForm.get('ci')?.hasError('required') && createEmployeeForm.get('ci')?.touched">
+        Este campo es obligatorio
+      </mat-error>
+      <mat-error *ngIf="createEmployeeForm.get('ci')?.hasError('minlength') && createEmployeeForm.get('ci')?.touched">
+        Mínimo 7 dígitos
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Teléfono</mat-label>
+      <input matInput formControlName="cellphone" type="number" required>
+      <mat-error *ngIf="createEmployeeForm.get('cellphone')?.hasError('required') && createEmployeeForm.get('cellphone')?.touched">
+        Este campo es obligatorio
+      </mat-error>
+      <mat-error *ngIf="createEmployeeForm.get('cellphone')?.hasError('minlength') && createEmployeeForm.get('cellphone')?.touched">
+        Mínimo 8 dígitos
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Dirección</mat-label>
+      <input matInput formControlName="address" type="text" required>
+      <mat-error *ngIf="createEmployeeForm.get('address')?.hasError('required') && createEmployeeForm.get('address')?.touched">
+        Este campo es obligatorio
+      </mat-error>
+      <mat-error *ngIf="createEmployeeForm.get('address')?.hasError('minlength') && createEmployeeForm.get('address')?.touched">
+        Mínimo 5 caracteres
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Fecha de Nacimiento</mat-label>
+      <input matInput formControlName="birthdate" type="date" required>
+      <mat-error *ngIf="createEmployeeForm.get('birthdate')?.hasError('required') && createEmployeeForm.get('birthdate')?.touched">
+        Este campo es obligatorio
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Código</mat-label>
+      <input matInput formControlName="code" type="text">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Profesión</mat-label>
+      <mat-select formControlName="professionId" required>
+        <mat-option *ngFor="let profession of professions" [value]="profession.id">{{ profession.profession }}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="createEmployeeForm.get('professionId')?.hasError('required') && createEmployeeForm.get('professionId')?.touched">
+        Este campo es obligatorio
+      </mat-error>
+    </mat-form-field>
+    <button type="submit" class="w-50" mat-raised-button color="primary" [disabled]="createEmployeeForm.invalid">Registrar Empleado</button>
+  </div>
+</form>

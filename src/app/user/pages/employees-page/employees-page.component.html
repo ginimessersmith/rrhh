@@ -1,1 +1,15 @@
-<p>employees-page works!</p>
+<h2 class="mt-2">Empleados</h2>
+<mat-divider></mat-divider>
+<h2>Opciones</h2>
+<div class="d-flex gap-2">
+  <button mat-raised-button color="accent" (click)="createEmployee()">Registrar Empleado</button>
+  <button mat-raised-button color="accent" (click)="allEmployee()">Listar Empleados</button>
+</div>
+<div class="mt-5">
+  <user-employee-create-employee
+  *ngIf="isCreateEmployee"
+  (createEmployeeEmit)="changeCreateEmployee($event)"
+  (allEmployeeEmit)="changeAllEmployee($event)"
+  ></user-employee-create-employee>
+  <user-employee-all-employee *ngIf="isAllEmployees"></user-employee-all-employee>
+</div>

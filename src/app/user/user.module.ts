@@ -22,10 +22,15 @@ import { ApplicationsPageComponent } from './pages/applications-page/application
 import { MyMenuExpansionPanelComponent } from './components/my-menu-expansion-panel/my-menu-expansion-panel.component';
 import { CreateBranchComponent } from './components/enterprise/create-branch/create-branch.component';
 import { AllBranchComponent } from './components/enterprise/all-branch/all-branch.component';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { CreateEmployeeComponent } from './components/employee/create-employee/create-employee.component';
 import { CreateDepartmentComponent } from './components/enterprise/create-department/create-department.component';
 import { AllDepartmentComponent } from './components/enterprise/all-department/all-department.component';
 import { CreateDepartmentBranchComponent } from './components/enterprise/create-department-branch/create-department-branch.component';
 import { AllDepartmentBranchComponent } from './components/enterprise/all-department-branch/all-department-branch.component';
+import { AllEmployeeComponent } from './components/employee/all-employee/all-employee.component';
 
 
 @NgModule({
@@ -48,16 +53,22 @@ import { AllDepartmentBranchComponent } from './components/enterprise/all-depart
     MyMenuExpansionPanelComponent,
     CreateBranchComponent,
     AllBranchComponent,
+    CreateEmployeeComponent,
     CreateDepartmentComponent,
     AllDepartmentComponent,
     CreateDepartmentBranchComponent,
-    AllDepartmentBranchComponent
+    AllDepartmentBranchComponent,
+    AllEmployeeComponent
   ],
   imports: [
     CommonModule,
     UserRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
+    CommonModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ]
 })
 export class UserModule { }
