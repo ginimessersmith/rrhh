@@ -28,6 +28,7 @@ import { MatTableModule } from '@angular/material/table';
 import { CreateEmployeeComponent } from './components/employee/create-employee/create-employee.component';
 import { CreateDepartmentComponent } from './components/enterprise/create-department/create-department.component';
 import { AllDepartmentComponent } from './components/enterprise/all-department/all-department.component';
+import { AllEmployeeComponent } from './components/employee/all-employee/all-employee.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { AllDepartmentComponent } from './components/enterprise/all-department/a
     AllBranchComponent,
     CreateEmployeeComponent,
     CreateDepartmentComponent,
-    AllDepartmentComponent
+    AllDepartmentComponent,
+    AllEmployeeComponent
   ],
   imports: [
     CommonModule,

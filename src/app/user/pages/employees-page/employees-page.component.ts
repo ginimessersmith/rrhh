@@ -1,60 +1,46 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { EmployeeService } from '../../services/employees.service';
-import { Employee } from 'src/app/auth/interfaces';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-employees-page',
   templateUrl: './employees-page.component.html',
   styleUrls: ['./employees-page.component.css']
 })
-export class EmployeesPageComponent implements OnInit {
+export class EmployeesPageComponent {
 
-  employee: Employee | undefined;
-  displayedColumns: string[] = ['name', 'genre', 'ci', 'cellphone', 'profession', 'actions'];
-  dataSource!: MatTableDataSource<Employee>;
+  public isCreateEmployee: boolean = false;
+  public isAllEmployees: boolean = true;
+  public isEditEmployee: boolean = false;
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
+  constructor() {}
 
-  constructor(private employeeService: EmployeeService) {}
-
-  ngOnInit(): void {
-    this.loadEmployees();
+  createEmployee(){
+    this.isCreateEmployee = true;
+    this.isAllEmployees = false;
+    this.isEditEmployee = false;
   }
 
-  loadEmployees(): void {
-    this.employeeService.getAllEmployees().subscribe(
-      data => {
-        this.dataSource = new MatTableDataSource(data);
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
-      },
-      error => {
-        console.error('Error fetching employees', error);
-      }
-    );
+  allEmployee(){
+    this.isCreateEmployee = false;
+    this.isAllEmployees = true;
+    this.isEditEmployee = false;
   }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
+  editEmployee(){
+    this.isCreateEmployee = false;
+    this.isAllEmployees = false;
+    this.isEditEmployee = true;
   }
 
-  getEmployeeById(id: string): void{
-    this.employeeService.getEmployeeById(id).subscribe(
-      data=>{
-        this.employee = data;
-      },
-      error => {
-        console.error('Error fetching employee by ID', error);
-      }
-    )
+  changeCreateEmployee(newValue: boolean) {
+    this.isCreateEmployee = newValue;
   }
+
+  changeAllEmployee(newValue: boolean) {
+    this.isAllEmployees = newValue;
+  }
+
+  changeEditEmployee(newValue: boolean) {
+    this.isEditEmployee = newValue;
+  }
+
 }
