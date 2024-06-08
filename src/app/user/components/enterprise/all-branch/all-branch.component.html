@@ -1,1 +1,13 @@
-<p>all-branch works!</p>
+<div class="mx-auto w-50">
+  <table mat-table [dataSource]="allBranches" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="branch">
+      <th class="text-center" mat-header-cell *matHeaderCellDef>Sucursales</th>
+      <th class="p-3" mat-cell *matCellDef="let allBranches">{{allBranches.branch}}</th>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+</div>

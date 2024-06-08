@@ -22,6 +22,8 @@ import { ApplicationsPageComponent } from './pages/applications-page/application
 import { MyMenuExpansionPanelComponent } from './components/my-menu-expansion-panel/my-menu-expansion-panel.component';
 import { CreateBranchComponent } from './components/enterprise/create-branch/create-branch.component';
 import { AllBranchComponent } from './components/enterprise/all-branch/all-branch.component';
+import { CreateDepartmentComponent } from './components/enterprise/create-department/create-department.component';
+import { AllDepartmentComponent } from './components/enterprise/all-department/all-department.component';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { AllBranchComponent } from './components/enterprise/all-branch/all-branc
     ApplicationsPageComponent,
     MyMenuExpansionPanelComponent,
     CreateBranchComponent,
-    AllBranchComponent
+    AllBranchComponent,
+    CreateDepartmentComponent,
+    AllDepartmentComponent
   ],
   imports: [
     CommonModule,

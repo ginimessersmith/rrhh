@@ -11,7 +11,7 @@ export const ListExpansionPanel = [
       { 'nameRouter': 'Sucursales', 'router': '/user/branch' },
       { 'nameRouter': 'Departamentos', 'router': '/user/department' },
       { 'nameRouter': 'Departamentos Sucursales', 'router': '/user/department-branch' },
-      { 'nameRouter': 'Posiciones', 'router': '/user/position' },
+      { 'nameRouter': 'Cargos', 'router': '/user/position' },
     ]
   },
   {
