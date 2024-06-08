@@ -22,7 +22,10 @@ import { ApplicationsPageComponent } from './pages/applications-page/application
 import { MyMenuExpansionPanelComponent } from './components/my-menu-expansion-panel/my-menu-expansion-panel.component';
 import { CreateBranchComponent } from './components/enterprise/create-branch/create-branch.component';
 import { AllBranchComponent } from './components/enterprise/all-branch/all-branch.component';
-
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { CreateEmployeeComponent } from './components/employee/create-employee/create-employee.component';
 
 @NgModule({
   declarations: [
@@ -43,13 +46,19 @@ import { AllBranchComponent } from './components/enterprise/all-branch/all-branc
     ApplicationsPageComponent,
     MyMenuExpansionPanelComponent,
     CreateBranchComponent,
-    AllBranchComponent
+    AllBranchComponent,
+    CreateEmployeeComponent
+
   ],
   imports: [
     CommonModule,
     UserRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
+    CommonModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ]
 })
 export class UserModule { }
