@@ -15,6 +15,13 @@ import { PositionsPageComponent } from './pages/positions-page/positions-page.co
 import { ApplicantsPageComponent } from './pages/applicants-page/applicants-page.component';
 import { ApplicationsPageComponent } from './pages/applications-page/applications-page.component';
 import { EmployeesPageComponent } from './pages/employees-page/employees-page.component';
+import { AttendancesPageComponent } from './pages/attendances-page/attendances-page.component';
+import { BonusesPageComponent } from './pages/bonuses-page/bonuses-page.component';
+import { ContractPageComponent } from './pages/contract-page/contract-page.component';
+import { DeductionsPageComponent } from './pages/deductions-page/deductions-page.component';
+import { PayrollsPageComponent } from './pages/payrolls-page/payrolls-page.component';
+import { SettlementsPageComponent } from './pages/settlements-page/settlements-page.component';
+import { UserPageComponent } from './pages/user-page/user-page.component';
 
 const routes: Routes = [
   {
@@ -34,6 +41,13 @@ const routes: Routes = [
       {path:'applicant',component:ApplicantsPageComponent},
       {path:'application',component:ApplicationsPageComponent},
       {path:'employee',component:EmployeesPageComponent},
+      {path:'attendance',component:AttendancesPageComponent},
+      {path:'bonus',component:BonusesPageComponent},
+      {path:'contract',component:ContractPageComponent},
+      {path:'deduction',component:DeductionsPageComponent},
+      {path:'payroll',component:PayrollsPageComponent},
+      {path:'settlement',component:SettlementsPageComponent},
+      {path:'user',component:UserPageComponent},
     ]
   }
 ];

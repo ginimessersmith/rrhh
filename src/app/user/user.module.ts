@@ -31,6 +31,13 @@ import { AllDepartmentComponent } from './components/enterprise/all-department/a
 import { CreateDepartmentBranchComponent } from './components/enterprise/create-department-branch/create-department-branch.component';
 import { AllDepartmentBranchComponent } from './components/enterprise/all-department-branch/all-department-branch.component';
 import { AllEmployeeComponent } from './components/employee/all-employee/all-employee.component';
+import { ContractPageComponent } from './pages/contract-page/contract-page.component';
+import { AttendancesPageComponent } from './pages/attendances-page/attendances-page.component';
+import { DeductionsPageComponent } from './pages/deductions-page/deductions-page.component';
+import { BonusesPageComponent } from './pages/bonuses-page/bonuses-page.component';
+import { SettlementsPageComponent } from './pages/settlements-page/settlements-page.component';
+import { PayrollsPageComponent } from './pages/payrolls-page/payrolls-page.component';
+import { UserPageComponent } from './pages/user-page/user-page.component';
 
 
 @NgModule({
@@ -58,7 +65,14 @@ import { AllEmployeeComponent } from './components/employee/all-employee/all-emp
     AllDepartmentComponent,
     CreateDepartmentBranchComponent,
     AllDepartmentBranchComponent,
-    AllEmployeeComponent
+    AllEmployeeComponent,
+    ContractPageComponent,
+    AttendancesPageComponent,
+    DeductionsPageComponent,
+    BonusesPageComponent,
+    SettlementsPageComponent,
+    PayrollsPageComponent,
+    UserPageComponent
   ],
   imports: [
     CommonModule,

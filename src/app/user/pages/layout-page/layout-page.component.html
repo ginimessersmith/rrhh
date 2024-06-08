@@ -8,14 +8,12 @@
     </mat-toolbar>
 
     <mat-nav-list>
-      <!-- <mat-list-item
-        *ngFor="let item of sideBarItems"
-        [routerLink]="item.url"
-        (click)="sidenav.toggle()"
-      >
-        <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
-        {{ item.label }}
-      </mat-list-item> -->
+      <div class="text-center">
+        <button class="m-2" mat-icon-button color="primary" (click)="goToPerfil()">
+          <mat-icon>home</mat-icon>
+        </button>
+      </div>
+
       <user-my-menu-expansion-panel></user-my-menu-expansion-panel>
     </mat-nav-list>
   </mat-sidenav>

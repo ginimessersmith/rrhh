@@ -22,4 +22,8 @@ export class LayoutPageComponent {
     localStorage.clear()
     this.router.navigateByUrl('/dashboard')
   }
+
+  goToPerfil(){
+    this.router.navigateByUrl('/user/perfil')
+  }
 }
