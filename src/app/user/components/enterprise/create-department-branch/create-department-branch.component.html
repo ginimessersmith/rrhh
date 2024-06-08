@@ -1,0 +1,32 @@
+<form class="create-form-center" action="">
+
+  <div class="d-flex justify-content-between align-items-center">
+    <h3>Formulario</h3>
+    <button mat-raised-button color="primary" [disabled]="true">Crear</button>
+  </div>
+
+  <div class="d-flex gap-5">
+    <mat-form-field>
+      <mat-label>Seleccione un Departamento</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let item of allDepartmentBranches"
+          [value]="item.department.id">{{item.department.department}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Selecione una Sucursal</mat-label>
+      <mat-select>
+        <mat-option
+        *ngFor="let item of allDepartmentBranches"
+        [value]="item.branch.id"
+        >
+        {{item.branch.branch}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+</form>
+
+<!-- {{allDepartmentBranches|json}} -->

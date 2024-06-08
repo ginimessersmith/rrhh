@@ -1,6 +1,23 @@
 <h2>Departamentos</h2>
 <mat-divider></mat-divider>
-<div>
-  <button>Crear Departamento</button>
-  <button>Ver Departamentos</button>
+<div class="mt-2 d-flex justify-content-end gap-5 ">
+  <div class="d-flex gap-1">
+    <mat-icon *ngIf="!isAllDepartment">visibility_off</mat-icon>
+    <mat-icon *ngIf="isAllDepartment">visibility</mat-icon>
+    <h4>Ver Lista</h4>
+  </div>
+  <mat-slide-toggle [checked]="isAllDepartment" (change)="activeLista($event)"></mat-slide-toggle>
+</div>
+
+<div class="mt-5 d-flex justify-content-around align-items-center components-container">
+  <user-enterprise-create-department
+  (allDepartmentEmit)="changeAllDepartment($event)"
+  ></user-enterprise-create-department>
+  <!-- *ngIf="isCreateDepartment" -->
+
+  <user-enterprise-all-department
+  [isAll]="isAllDepartment"
+  [allDepartments]="allDepartment"
+  ></user-enterprise-all-department>
+  <!-- *ngIf="isAllDepartment" -->
 </div>

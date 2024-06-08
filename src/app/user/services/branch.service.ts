@@ -24,4 +24,9 @@ export class BranchService {
     const url = `${this.baseUrl}/branches`
     return this.http.get<BranchResponseInterface[]>(url)
   }
+
+  oneBranch(id:string):Observable<BranchResponseInterface>{
+    const url = `${this.baseUrl}/branches/${id}`
+    return this.http.get<BranchResponseInterface>(url)
+  }
 }

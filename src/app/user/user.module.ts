@@ -24,6 +24,8 @@ import { CreateBranchComponent } from './components/enterprise/create-branch/cre
 import { AllBranchComponent } from './components/enterprise/all-branch/all-branch.component';
 import { CreateDepartmentComponent } from './components/enterprise/create-department/create-department.component';
 import { AllDepartmentComponent } from './components/enterprise/all-department/all-department.component';
+import { CreateDepartmentBranchComponent } from './components/enterprise/create-department-branch/create-department-branch.component';
+import { AllDepartmentBranchComponent } from './components/enterprise/all-department-branch/all-department-branch.component';
 
 
 @NgModule({
@@ -47,7 +49,9 @@ import { AllDepartmentComponent } from './components/enterprise/all-department/a
     CreateBranchComponent,
     AllBranchComponent,
     CreateDepartmentComponent,
-    AllDepartmentComponent
+    AllDepartmentComponent,
+    CreateDepartmentBranchComponent,
+    AllDepartmentBranchComponent
   ],
   imports: [
     CommonModule,

@@ -1,1 +1,13 @@
-<p>all-department works!</p>
+<div
+class="w-50 mx-auto"
+*ngIf="isAll">
+  <table mat-table [dataSource]="allDepartments" class="mat-elevation-z8">
+    <ng-container matColumnDef="department">
+      <th class="text-center" mat-header-cell *matHeaderCellDef="">Departamentos</th>
+      <th class="px-5" mat-cell *matCellDef="let allDepartments">{{allDepartments.department}}</th>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

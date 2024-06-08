@@ -1,1 +1,17 @@
-<p>create-department works!</p>
+<form
+[formGroup]="createDepartmentForm"
+(ngSubmit)="onCreateDepartment()"
+class="create-form-center" action="">
+<h3>Formulario </h3>
+ <div class="d-flex flex-column">
+  <mat-form-field>
+    <mat-label>Nombre</mat-label>
+    <input type="text" matInput formControlName="department">
+    <mat-error>Este campo es obligatorio</mat-error>
+  </mat-form-field>
+  <button type="submit" mat-raised-button color="primary" class="w-50" [disabled]="createDepartmentForm.invalid">
+    Crear
+  </button>
+ </div>
+
+</form>
