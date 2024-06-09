@@ -1,1 +1,26 @@
-<p>all-department-branch works!</p>
+<div *ngIf="isAllDep">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Departamentos y Sucursales</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-card-content>
+        <table mat-table [dataSource]="allDepartmentBranches" class="mat-elevation-z8">
+
+          <ng-container matColumnDef="department">
+            <th mat-header-cell *matHeaderCellDef>Departamento</th>
+            <td mat-cell *matCellDef="let allDepartmentBranches ">{{allDepartmentBranches.department.department}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="branch">
+            <th mat-header-cell *matHeaderCellDef>Sucursal</th>
+            <td mat-cell *matCellDef="let allDepartmentBranches">{{allDepartmentBranches.branch.branch}}</td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </mat-card-content>
+    </mat-card-content>
+  </mat-card>
+</div>

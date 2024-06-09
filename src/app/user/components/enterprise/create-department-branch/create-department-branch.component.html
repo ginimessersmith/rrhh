@@ -1,29 +1,38 @@
-<form class="create-form-center" action="">
+<form
+[formGroup]="createDepartmentForm"
+(ngSubmit)="onCreateDepBranch()"
+class="create-form-center"
+action=""
+>
 
   <div class="d-flex justify-content-between align-items-center">
     <h3>Formulario</h3>
-    <button mat-raised-button color="primary" [disabled]="true">Crear</button>
+    <button mat-raised-button mat-raised-button color="primary" [disabled]="createDepartmentForm.invalid">
+      Guardar <mat-icon>book_mark</mat-icon>
+    </button>
   </div>
 
   <div class="d-flex gap-5">
     <mat-form-field>
       <mat-label>Seleccione un Departamento</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let item of allDepartmentBranches"
-          [value]="item.department.id">{{item.department.department}}</mat-option>
+      <mat-select formControlName="departmentId">
+        <mat-option *ngFor="let item of allDepartment"
+          [value]="item.id">{{item.department}}</mat-option>
       </mat-select>
+      <mat-error>Debe elegir un departamento</mat-error>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Selecione una Sucursal</mat-label>
-      <mat-select>
+      <mat-select formControlName="branchId">
         <mat-option
-        *ngFor="let item of allDepartmentBranches"
-        [value]="item.branch.id"
+        *ngFor="let item of allBranch"
+        [value]="item.id"
         >
-        {{item.branch.branch}}
+        {{item.branch}}
         </mat-option>
       </mat-select>
+      <mat-error>Debe elegir una sucursal</mat-error>
     </mat-form-field>
   </div>
 

@@ -30,6 +30,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
+
 @NgModule({
   exports: [
     MatAutocompleteModule,
@@ -60,6 +61,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatTabsModule,
     MatCheckboxModule,
     MatSlideToggleModule,
+
   ]
 })
 export class MaterialModule { }
