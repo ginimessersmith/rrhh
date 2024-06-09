@@ -1,1 +1,15 @@
-<p>managements-page works!</p>
+<h2>Gestiones</h2>
+<mat-divider></mat-divider>
+<div class="mt-3 d-flex justify-content-end gap-5">
+  <div class="d-flex gap-2">
+    <mat-icon *ngIf="isListManagement">visibility</mat-icon>
+    <mat-icon *ngIf="!isListManagement">visibility_off</mat-icon>
+    <h3>GESTIONES</h3>
+  </div>
+
+  <mat-slide-toggle [checked]="isListManagement" (change)="changeSlideToggle()"></mat-slide-toggle>
+</div>
+<div class="mt-5 mt-5 d-flex justify-content-around components-container">
+  <user-form-create-management></user-form-create-management>
+  <user-form-all-management [allManagement]="allManagement" [isList]="isListManagement"></user-form-all-management>
+</div>

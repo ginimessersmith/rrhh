@@ -1,1 +1,29 @@
-<p>all-management works!</p>
+<div *ngIf="isList">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Gestiones</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <table mat-table [dataSource]="allManagement" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="year">
+          <th mat-header-cell *matHeaderCellDef>año</th>
+          <td mat-cell *matCellDef="let manangement">{{manangement.year}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="start_date">
+          <th mat-header-cell *matHeaderCellDef>Fecha Inicio</th>
+          <td mat-cell *matCellDef="let management">{{management.start_date|date}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="end_date">
+          <th mat-header-cell *matHeaderCellDef>Fecha Final</th>
+          <td mat-cell *matCellDef="let management">{{management.end_date|date}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayColumn"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayColumn;"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+</div>
