@@ -1,1 +1,42 @@
-<p>create-management works!</p>
+<form
+[formGroup]="createManagementForm"
+(ngSubmit)="onCreateManagement()"
+class="create-form-center"
+action="">
+  <h3>formulario</h3>
+  <div>
+    <div class="d-flex justify-content-between ">
+      <mat-form-field>
+        <mat-label>Año</mat-label>
+        <input type="text" placeholder="Ex. 2024" matInput formControlName="year">
+        <mat-error>Este campo es obligatorio</mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" [disabled]="createManagementForm.invalid">Guardar</button>
+
+    </div>
+
+    <div class="d-flex gap-5">
+
+      <mat-form-field>
+        <mat-label>Fecha de inicio</mat-label>
+        <input matInput [matDatepicker]="picker1" placeholder="Ex. 27-03-2024" formControlName="start_date">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1 color="accent"></mat-datepicker>
+        <mat-error>la fecha de inicio es obligatoria</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Fecha de inicio</mat-label>
+        <input matInput [matDatepicker]="picker2" placeholder="Ex. 24-09-2024" formControlName="end_date">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2 color="primary"></mat-datepicker>
+        <mat-error>la fecha de final es obligatoria</mat-error>
+      </mat-form-field>
+
+    </div>
+
+  </div>
+</form>
