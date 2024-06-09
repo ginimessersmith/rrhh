@@ -1,4 +1,4 @@
-export interface ContractTypes{
+export interface ContractTypesInterface{
   id: string;
   type: string;
 }

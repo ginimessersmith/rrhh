@@ -11,5 +11,5 @@
   (createContractTypesEmit)="changeCreateContractType($event)"
   (allContractTypesEmit)="changeAllContractType($event)"
   ></user-contract-types-create-contract-types>
-  <user-contract-types-all-contract-types *ngIf="isAllContractType"></user-contract-types-all-contract-types>
+  <user-contract-types-all-contract-types [allContractTypes]="allContractTypes" [isAllContractTypes]="isAllContractTypes"></user-contract-types-all-contract-types>
 </div>

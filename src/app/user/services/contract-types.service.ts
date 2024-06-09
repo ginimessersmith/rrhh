@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environment/environment';
 import { CreateContractTypesInterface } from '../interfaces/contract-types/create-contract-types.interface';
-import { ContractTypes } from '../interfaces/contract-types/contract-types.interface';
+import { ContractTypesInterface } from '../interfaces/contract-types/contract-types.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +21,8 @@ export class ContractTypesService{
     return this.http.post<boolean>(url, createContractTypeInterface);
   }
 
-  getAllContractTypes():Observable<ContractTypes[]>{
+  getAllContractTypes():Observable<ContractTypesInterface[]>{
     const url = `${this.baseUrl}/contract-types`;
-    return this.http.get<ContractTypes[]>(url);
+    return this.http.get<ContractTypesInterface[]>(url);
   }
 }
