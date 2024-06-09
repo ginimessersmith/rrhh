@@ -38,6 +38,10 @@ import { BonusesPageComponent } from './pages/bonuses-page/bonuses-page.componen
 import { SettlementsPageComponent } from './pages/settlements-page/settlements-page.component';
 import { PayrollsPageComponent } from './pages/payrolls-page/payrolls-page.component';
 import { UserPageComponent } from './pages/user-page/user-page.component';
+import { CreatePositionComponent } from './components/enterprise/create-position/create-position.component';
+import { AllPositionsComponent } from './components/enterprise/all-positions/all-positions.component';
+import { CreateManagementComponent } from './components/form/create-management/create-management.component';
+import { AllManagementComponent } from './components/form/all-management/all-management.component';
 
 
 @NgModule({
@@ -72,7 +76,11 @@ import { UserPageComponent } from './pages/user-page/user-page.component';
     BonusesPageComponent,
     SettlementsPageComponent,
     PayrollsPageComponent,
-    UserPageComponent
+    UserPageComponent,
+    CreatePositionComponent,
+    AllPositionsComponent,
+    CreateManagementComponent,
+    AllManagementComponent
   ],
   imports: [
     CommonModule,

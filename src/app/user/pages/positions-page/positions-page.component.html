@@ -1,1 +1,21 @@
-<p>positions-page works!</p>
+<h2>Cargos de la Empresa</h2>
+<mat-divider></mat-divider>
+<div class="mt-2 d-flex justify-content-end gap-5">
+  <div class="d-flex gap-1">
+    <mat-icon *ngIf="isList">visibility</mat-icon>
+    <mat-icon *ngIf="!isList">visibility_off</mat-icon>
+    <h4>LISTA</h4>
+  </div>
+
+  <mat-slide-toggle [checked]="isList" (change)="changeSlideToggle()" color="primary"></mat-slide-toggle>
+</div>
+<div class="mt-5 d-flex justify-content-around components-container">
+  <user-enterprise-create-position [allDepartmetBranch]="allDepartmentBranch"
+    (allPositionsEmit)="changeAllPosition($event)">
+  </user-enterprise-create-position>
+  <!-- separacion -->
+  <user-enterprise-all-positions
+  [allPosition]="AllPositions"
+  [isListPosition]="isList"
+  ></user-enterprise-all-positions>
+</div>

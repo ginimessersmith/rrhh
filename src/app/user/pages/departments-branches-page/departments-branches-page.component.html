@@ -1,11 +1,20 @@
 <h2>Sucursales de los departmentos</h2>
 <mat-divider></mat-divider>
-<h2>Asignar</h2>
-<div class="d-flex justify-content-around align-items-center components-container">
-  <user-enterprise-create-department-branch
-  [allDepartmentBranches]="allDepartmentBranches"
-  ></user-enterprise-create-department-branch>
-  <user-enterprise-all-department-branch></user-enterprise-all-department-branch>
+
+<div class="mt-2 d-flex justify-content-between">
+  <h2>Asignar</h2>
+  <div class="d-flex gap-5">
+    <div class="d-flex gap-1">
+      <mat-icon *ngIf="isList">visibility</mat-icon>
+      <mat-icon *ngIf="!isList">visibility_off</mat-icon>
+      <h4>lista</h4>
+    </div>
+    <mat-slide-toggle [checked]="isList" (change)="changeSlide($event)" color="primary"></mat-slide-toggle>
+  </div>
 </div>
-
-
+<div class="mt-5 d-flex justify-content-around components-container">
+  <user-enterprise-create-department-branch [allDepartment]="allDepartment" [allBranch]="allBranch"
+    (allDepBranchEmit)="changeAllDepBranch($event)"></user-enterprise-create-department-branch>
+  <user-enterprise-all-department-branch [isAllDep]="isList"
+    [allDepartmentBranches]="allDepartmentBranches"></user-enterprise-all-department-branch>
+</div>
