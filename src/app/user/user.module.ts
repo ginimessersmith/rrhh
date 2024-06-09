@@ -38,6 +38,8 @@ import { BonusesPageComponent } from './pages/bonuses-page/bonuses-page.componen
 import { SettlementsPageComponent } from './pages/settlements-page/settlements-page.component';
 import { PayrollsPageComponent } from './pages/payrolls-page/payrolls-page.component';
 import { UserPageComponent } from './pages/user-page/user-page.component';
+import { CreateContractTypesComponent } from './components/contract-types/create-contract-types/create-contract-types.component';
+import { AllContractTypesComponent } from './components/contract-types/all-contract-types/all-contract-types.component';
 
 
 @NgModule({
@@ -72,7 +74,9 @@ import { UserPageComponent } from './pages/user-page/user-page.component';
     BonusesPageComponent,
     SettlementsPageComponent,
     PayrollsPageComponent,
-    UserPageComponent
+    UserPageComponent,
+    CreateContractTypesComponent,
+    AllContractTypesComponent
   ],
   imports: [
     CommonModule,

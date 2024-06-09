@@ -1,0 +1,8 @@
+.create-contract-form {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-radius: 8px;
+}

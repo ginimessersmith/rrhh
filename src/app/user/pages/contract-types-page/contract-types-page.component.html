@@ -1,1 +1,15 @@
-<p>contract-types-page works!</p>
+<h2 class="mt-2">Tipos de Contrato</h2>
+<mat-divider></mat-divider>
+<h2>Opciones</h2>
+<div class="d-flex gap-2">
+  <button mat-raised-button color="accent" (click)="CreateContractType()">Crear Tipo de Contrato</button>
+  <button mat-raised-button color="accent" (click)="AllContractType()">Listar Tipos de Contrato</button>
+</div>
+<div class="mt-5">
+  <user-contract-types-create-contract-types
+  *ngIf="isCreateContractType"
+  (createContractTypesEmit)="changeCreateContractType($event)"
+  (allContractTypesEmit)="changeAllContractType($event)"
+  ></user-contract-types-create-contract-types>
+  <user-contract-types-all-contract-types *ngIf="isAllContractType"></user-contract-types-all-contract-types>
+</div>

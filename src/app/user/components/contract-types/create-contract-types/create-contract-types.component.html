@@ -1,0 +1,16 @@
+<form class="create-contract-form w-50" [formGroup]="createContractTypeForm" (ngSubmit)="onCreate()">
+  <h2>Nuevo Empleado</h2>
+  <div class="d-flex flex-column">
+    <mat-form-field>
+      <mat-label>Tipo de Contrato</mat-label>
+      <input matInput formControlName="names" type="text" required>
+      <mat-error *ngIf="createContractTypeForm.get('type')?.hasError('required') && createContractTypeForm.get('type')?.touched">
+        Este campo es obligatorio
+      </mat-error>
+      <mat-error *ngIf="createContractTypeForm.get('type')?.hasError('minlength') && createContractTypeForm.get('type')?.touched">
+        Mínimo 3 caracteres
+      </mat-error>
+    </mat-form-field>
+    <button type="submit" class="w-50" mat-raised-button color="primary" [disabled]="createContractTypeForm.invalid">Registrar Empleado</button>
+  </div>
+</form>
