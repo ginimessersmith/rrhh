@@ -1,0 +1,47 @@
+<div *ngIf="viewList">
+  <table mat-table [dataSource]="allDeductions" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="amount">
+      <th mat-header-cell *matHeaderCellDef>Monto</th>
+      <td mat-cell *matCellDef="let deduction">{{deduction.amount}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>Descripcion</th>
+      <td mat-cell *matCellDef="let deduction">{{deduction.description}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="contract_start_date">
+      <th mat-header-cell *matHeaderCellDef>Inicio del contrato</th>
+      <td mat-cell *matCellDef="let deduction">{{deduction.contract.start_date |date}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="contract_end_date">
+      <th mat-header-cell *matHeaderCellDef>Fin del contrato</th>
+      <td mat-cell *matCellDef="let deduction">{{deduction.contract.end_date |date}}</td>
+    </ng-container>
+
+    <!-- <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef>Cargo</th>
+      <td mat-cell *matCellDef="let deduction">{{deduction.contract.position.position}}</td>
+    </ng-container> -->
+
+    <ng-container matColumnDef="employee">
+      <th mat-header-cell *matHeaderCellDef>Empleado</th>
+      <td mat-cell *matCellDef="let deduction">{{deduction.contract.employee.names}} {{deduction.contract.employee.last_names}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Opciones</th>
+      <td mat-cell *matCellDef="let deduction">
+      <button mat-mini-fab color="primary" (click)="sendIdDeduction(deduction.id)">
+        <mat-icon>search</mat-icon>
+      </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns:displayColumns;"></tr>
+
+  </table>
+</div>

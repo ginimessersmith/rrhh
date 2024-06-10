@@ -44,6 +44,14 @@ import { CreateManagementComponent } from './components/form/create-management/c
 import { AllManagementComponent } from './components/form/all-management/all-management.component';
 import { CreateContractTypesComponent } from './components/contract-types/create-contract-types/create-contract-types.component';
 import { AllContractTypesComponent } from './components/contract-types/all-contract-types/all-contract-types.component';
+import { AllPeriodsComponent } from './components/form/all-periods/all-periods.component';
+import { CreatePeriodsComponent } from './components/form/create-periods/create-periods.component';
+import { SharedModule } from '../shared/shared.module';
+import { CreateDeductionComponent } from './components/form/create-deduction/create-deduction.component';
+import { AllDeductionComponent } from './components/form/all-deduction/all-deduction.component';
+import { AllDeductionBetweenDateComponent } from './components/form/all-deduction-between-date/all-deduction-between-date.component';
+import { AllDeductionByContractComponent } from './components/form/all-deduction-by-contract/all-deduction-by-contract.component';
+import { OneDeductionComponent } from './components/form/one-deduction/one-deduction.component';
 
 
 @NgModule({
@@ -84,7 +92,14 @@ import { AllContractTypesComponent } from './components/contract-types/all-contr
     CreatePositionComponent,
     AllPositionsComponent,
     CreateManagementComponent,
-    AllManagementComponent
+    AllManagementComponent,
+    AllPeriodsComponent,
+    CreatePeriodsComponent,
+    CreateDeductionComponent,
+    AllDeductionComponent,
+    AllDeductionBetweenDateComponent,
+    AllDeductionByContractComponent,
+    OneDeductionComponent
   ],
   imports: [
     CommonModule,
@@ -94,7 +109,8 @@ import { AllContractTypesComponent } from './components/contract-types/all-contr
     CommonModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    SharedModule,
   ]
 })
 export class UserModule { }

@@ -16,8 +16,8 @@ export class ManagementsPageComponent implements OnInit{
   ){}
 
   ngOnInit(): void {
-    const isList = localStorage.getItem('isListManagement')
-    // if()
+    const isListLocal = localStorage.getItem('isListManagement')
+    if(isListLocal) this.isListManagement = JSON.parse(isListLocal)
     this.findAllManagement()
   }
 
@@ -35,6 +35,7 @@ export class ManagementsPageComponent implements OnInit{
 
   changeSlideToggle(){
     this.isListManagement = !this.isListManagement
+    localStorage.setItem('isListManagement',JSON.stringify(this.isListManagement))
   }
 
 }

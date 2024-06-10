@@ -31,7 +31,7 @@ export const ListExpansionPanel = [
     'listPanel': [
       { 'nameRouter': 'Gestiones', 'router': '/user/management' },
       { 'nameRouter': 'Periodos', 'router': '/user/period' },
-      { 'nameRouter': 'Deduccionens', 'router': '/user/deduction' },
+      { 'nameRouter': 'Descuentos', 'router': '/user/deduction' },
       { 'nameRouter': 'Bonos', 'router': '/user/bonus' },
       { 'nameRouter': 'Finiquito', 'router': '/user/settlement' },
       { 'nameRouter': 'Nómina de Sueldos', 'router': '/user/payroll' },

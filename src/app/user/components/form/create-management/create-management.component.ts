@@ -4,6 +4,7 @@ import { ManagementService } from '../../../services/management.service';
 import { CreateManagementInterface } from '../../../interfaces/managements/create-management.interface';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { DialogComponent } from 'src/app/shared/components/dialog/dialog.component';
 
 @Component({
   selector: 'user-form-create-management',
@@ -11,6 +12,8 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrls: ['./create-management.component.css']
 })
 export class CreateManagementComponent {
+
+  public Dialog = new DialogComponent(this.dialog)
 
   public createManagementForm: FormGroup = this.formBuilder.group({
     year: [0, [Validators.required, Validators.min(1900), this.yearValidator], []],
@@ -37,22 +40,14 @@ export class CreateManagementComponent {
     this.managementService.createManagement(createManagement)
     .subscribe({
       next:()=>{
-        this.openDialogSucces()
+        this.Dialog.openDialogSucces()
       },
       error:(err)=>{
         console.log({err})
-        this.openDialogError()
+        this.Dialog.openDialogError()
       }
     })
 
-  }
-
-  openDialogSucces() {
-    this.dialog.open(DialogSuccess);
-  }
-
-  openDialogError() {
-    this.dialog.open(DialogError);
   }
 
   yearValidator(control: AbstractControl): ValidationErrors | null {
@@ -72,18 +67,3 @@ export class CreateManagementComponent {
 
 }
 
-@Component({
-  selector: 'dialog-success',
-  templateUrl: 'dialog-success.html',
-  standalone: true,
-  imports: [MatDialogModule, MatButtonModule],
-})
-export class DialogSuccess {}
-
-@Component({
-  selector: 'dialog-error',
-  templateUrl: 'dialog-error.html',
-  standalone: true,
-  imports: [MatDialogModule, MatButtonModule],
-})
-export class DialogError {}

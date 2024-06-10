@@ -1,0 +1,42 @@
+<div>
+  <form class="create-form-center" action="" [formGroup]="createPeriodsForm" (ngSubmit)="onCreatePeriod()">
+
+    <div class="d-flex justify-content-between">
+
+      <mat-form-field>
+        <mat-label>Elija un Mes</mat-label>
+        <mat-select formControlName="month">
+          <mat-option
+          *ngFor="let item of listMonts"
+          [value]="item"
+          >{{item}}</mat-option>
+        </mat-select>
+        <mat-error>Este campo es obligatorio</mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" [disabled]="createPeriodsForm.invalid" >Guardar <mat-icon>book_mark</mat-icon> </button>
+
+    </div>
+
+    <div class="d-flex gap-3">
+      <mat-form-field>
+        <mat-label>Fecha Inicio</mat-label>
+        <input matInput [matDatepicker]="picker1" placeholder="" formControlName="start_date">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1 color="accent"></mat-datepicker>
+        <mat-error>Este campo es obligatorio</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Fecha Fin</mat-label>
+        <input matInput [matDatepicker]="picker2" placeholder="" formControlName="end_date">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2 color="primary"></mat-datepicker>
+        <mat-error>Este campo es obligatorio</mat-error>
+      </mat-form-field>
+    </div>
+
+  </form>
+</div>

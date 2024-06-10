@@ -1,1 +1,42 @@
-<p>deductions-page works!</p>
+<h2>Descuentos</h2>
+<mat-divider></mat-divider>
+<div *ngIf="!viewOneDeduction" class="mt-2">
+  <mat-tab-group animationDuration="500ms">
+
+    <mat-tab label="Guardar y ver todas los Descuentos">
+      <div class="d-flex justify-content-end gap-5 p-2">
+        <div class="d-flex gap-1">
+          <mat-icon *ngIf="viewList">visibility</mat-icon>
+          <mat-icon *ngIf="!viewList">visibility_off</mat-icon>
+          <h4>LISTA</h4>
+        </div>
+
+        <mat-slide-toggle [checked]="viewList" (change)="changeSlideToggle()"></mat-slide-toggle>
+      </div>
+      <div class="mt-2 d-flex justify-content-around components-container">
+        <user-form-create-deduction
+        [allContracts]="allContract"
+        (allDeductionsEmit)="changeAllDeductions($event)"
+        ></user-form-create-deduction>
+        <user-form-all-deduction [allDeductions]="allDeduction" [viewList]="viewList"
+          (idDeductionEmit)="changeIdDeduction($event)"></user-form-all-deduction>
+      </div>
+
+    </mat-tab>
+
+    <mat-tab label="Descuentos por rango de fecha">
+      <user-form-all-deduction-between-date></user-form-all-deduction-between-date>
+    </mat-tab>
+
+    <mat-tab label="Descuentos por contrato">
+      <user-form-all-deduction-by-contract [allContract]="allContract"></user-form-all-deduction-by-contract>
+    </mat-tab>
+
+  </mat-tab-group>
+</div>
+<div *ngIf="viewOneDeduction">
+  <user-form-one-deduction
+  [deduction]="deduction"
+  (viewOneDeductionEmit)="changeViewOneDeduction($event)">
+  </user-form-one-deduction>
+</div>

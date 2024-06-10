@@ -1,0 +1,59 @@
+<div class="mt-2">
+  <button mat-mini-fab color="primary" (click)="emitValue()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+</div>
+
+<div class="mt-4 d-flex justify-content-center align-items-center ">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Informacion sobre el Descuento</mat-card-title>
+      <mat-card-subtitle><strong>Monto:</strong> {{deduction.amount}}</mat-card-subtitle>
+      <mat-card-subtitle><strong>Descripcion:</strong> {{deduction.description}}</mat-card-subtitle>
+      <mat-card-subtitle><strong>Fecha:</strong> {{deduction.date|date}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-divider class="my-1"></mat-divider>
+      <div class="d-flex gap-3">
+
+        <div>
+          <h3><strong>Especificacion del Empleado.</strong></h3>
+          <p><strong>Nombre:</strong> {{deduction.contract.employee.names}}</p>
+          <p><strong>Apellido:</strong> {{deduction.contract.employee.last_names}}</p>
+          <p><strong>Genero:</strong> {{deduction.contract.employee.genre}}</p>
+          <p><strong>Carnet:</strong> {{deduction.contract.employee.ci}}</p>
+          <p><strong>Telefono:</strong> {{deduction.contract.employee.cellphone}}</p>
+          <p><strong>Direccion:</strong> {{deduction.contract.employee.address}}</p>
+          <p><strong>Nacimiento:</strong> {{deduction.contract.employee.birthdate|date}}</p>
+          <p><strong>Codigo:</strong> {{deduction.contract.employee.code}}</p>
+        </div>
+
+        <mat-divider [vertical]="true"></mat-divider>
+
+        <div>
+          <h3><strong>Especificacion del Contrato.</strong></h3>
+          <p><strong>Fecha de Inicio del Contrato:</strong> {{deduction.contract.start_date|date}}</p>
+          <p><strong>Fecha de Finalizacion del Contrato:</strong> {{deduction.contract.end_date|date}}</p>
+          <p><strong>Tipo de Contrato:</strong> {{deduction.contract.contractType.type}}</p>
+          <p><strong>Salario base:</strong> {{deduction.contract.base_salary}}</p>
+        </div>
+
+        <mat-divider [vertical]="true"></mat-divider>
+
+        <div>
+          <h3><strong>Especificacion del Cargo.</strong></h3>
+          <p><strong>Cargo:</strong> {{deduction.contract.position.position}}</p>
+          <h4><strong>Departamento y Sucursal</strong></h4>
+          <p><strong>Departamento:</strong> {{deduction.contract.position.departmentBranch.department.department}}</p>
+          <p><strong>Sucursal:</strong> {{deduction.contract.position.departmentBranch.branch.branch}}</p>
+        </div>
+
+      </div>
+
+    </mat-card-content>
+    <mat-card-footer>
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </mat-card-footer>
+  </mat-card>
+
+</div>
