@@ -52,6 +52,8 @@ import { AllDeductionComponent } from './components/form/all-deduction/all-deduc
 import { AllDeductionBetweenDateComponent } from './components/form/all-deduction-between-date/all-deduction-between-date.component';
 import { AllDeductionByContractComponent } from './components/form/all-deduction-by-contract/all-deduction-by-contract.component';
 import { OneDeductionComponent } from './components/form/one-deduction/one-deduction.component';
+import { CreateContractComponent } from './components/personal/create-contract/create-contract.component';
+import { AllContractComponent } from './components/personal/all-contract/all-contract.component';
 
 
 @NgModule({
@@ -99,7 +101,9 @@ import { OneDeductionComponent } from './components/form/one-deduction/one-deduc
     AllDeductionComponent,
     AllDeductionBetweenDateComponent,
     AllDeductionByContractComponent,
-    OneDeductionComponent
+    OneDeductionComponent,
+    CreateContractComponent,
+    AllContractComponent
   ],
   imports: [
     CommonModule,

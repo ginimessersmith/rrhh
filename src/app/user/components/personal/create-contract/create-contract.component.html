@@ -1,0 +1,67 @@
+<div>
+  <form [formGroup]="createContractForm" (ngSubmit)="onCreateContract()" class="create-form-center" action="">
+
+    <h3>Formulario</h3>
+    <div class="d-flex justify-content-between">
+      <div class="d-flex flex-column w-50">
+        <mat-form-field>
+          <mat-label>Seleccione el empleado</mat-label>
+          <mat-select formControlName="employeeId">
+            <mat-option [value]="item.id" *ngFor="let item of allEmployees">
+              {{item.names}} {{item.last_names}}
+            </mat-option>
+          </mat-select>
+          <mat-error>Este campo es obligatorio</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Fecha Inicio</mat-label>
+          <input matInput [matDatepicker]="picker2" placeholder="" formControlName="start_date">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2 color="primary"></mat-datepicker>
+          <mat-error>Este campo es obligatorio</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Fecha Final</mat-label>
+          <input matInput [matDatepicker]="picker3" placeholder="" formControlName="end_date">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker3"></mat-datepicker-toggle>
+          <mat-datepicker #picker3 color="primary"></mat-datepicker>
+          <mat-error>Este campo es obligatorio</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Salario Básico</mat-label>
+          <input type="text" placeholder="Ex. 3500" matInput formControlName="base_salary">
+          <mat-error>Este campo es obligatorio</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="d-flex gap-2">
+      <mat-form-field>
+        <mat-label>Tipo de Contrato</mat-label>
+        <mat-select formControlName="contractTypeId">
+          <mat-option [value]="item.id" *ngFor="let item of allContractTypes">
+            {{item.type}}
+          </mat-option>
+        </mat-select>
+        <mat-error>Este campo es obligatorio</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Cargo</mat-label>
+        <mat-select formControlName="positionId">
+          <mat-option [value]="item.id" *ngFor="let item of allPositions">
+            {{item.position}} - {{item.departmentBranch.department.department}} - {{item.departmentBranch.branch.branch}}
+          </mat-option>
+        </mat-select>
+        <mat-error>Este campo es obligatorio</mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <button mat-raised-button color="primary" [disabled]="createContractForm.invalid">Guardar</button>
+    </div>
+  </form>
+</div>
