@@ -21,7 +21,6 @@ export const ListExpansionPanel = [
       { 'nameRouter': 'Empleados', 'router': '/user/employee' },
       { 'nameRouter': 'Contratos', 'router': '/user/contract' },
       { 'nameRouter': 'Tipos de Contratos', 'router': '/user/contract-type' },
-      { 'nameRouter': 'Profesiones', 'router': '/user/profession' },
       { 'nameRouter': 'Asistencias', 'router': '/user/attendance' },
     ]
   },
@@ -41,9 +40,9 @@ export const ListExpansionPanel = [
     'name': 'Vacantes',
     'icon': 'person_search',
     'listPanel': [
-      { 'nameRouter': 'Vacancias', 'router': '/user/vacancies' },
-      { 'nameRouter': 'Aplicantes', 'router': '/user/applicant' },
-      { 'nameRouter': 'Aplicaciones', 'router': '/user/application' },
+      { 'nameRouter': 'Convocatorias', 'router': '/user/vacancies' },
+      { 'nameRouter': 'Postulantes', 'router': '/user/applicant' },
+      { 'nameRouter': 'Postulaciones', 'router': '/user/application' },
     ]
   },
 ]
