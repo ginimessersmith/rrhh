@@ -1,1 +1,27 @@
-<p>attendances-page works!</p>
+<h2>Asistencias</h2>
+<mat-divider></mat-divider>
+<div *ngIf="!viewOneAttendance" class="mt-2">
+  <mat-tab-group animationDuration="500ms">
+
+    <mat-tab label="Guardar y ver todas los Asistencias">
+      <div class="d-flex justify-content-end gap-5 p-2">
+        <div class="d-flex gap-1">
+          <mat-icon *ngIf="viewList">visibility</mat-icon>
+          <mat-icon *ngIf="!viewList">visibility_off</mat-icon>
+          <h4>LISTA</h4>
+        </div>
+
+        <mat-slide-toggle [checked]="viewList" (change)="changeSlideToggle()"></mat-slide-toggle>
+      </div>
+      <div class="mt-2 d-flex justify-content-around components-container">
+        <user-personal-create-attendances
+        [allEmployees]="allEmployees"
+        [allAttendances]="allAttendances"
+        (allAttendancesEmit)="changeAllAttendances($event)"
+        ></user-personal-create-attendances>
+        <user-personal-all-attendances [allAttendances]="allAttendances" [viewList]="viewList"
+        (idAttendanceEmit)="changeIdAttendance($event)"></user-personal-all-attendances>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

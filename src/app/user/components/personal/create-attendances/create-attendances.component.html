@@ -1,0 +1,37 @@
+<div>
+  <form [formGroup]="createAttendanceForm" (ngSubmit)="onCreateAttendance()" class="create-form-center" action="">
+    <h3>Formulario</h3>
+    <div class="d-flex justify-content-between">
+      <div class="d-flex flex-column w-50">
+        <mat-form-field>
+          <mat-label>Seleccione el empleado</mat-label>
+          <mat-select formControlName="employeeId">
+            <mat-option [value]="item.id" *ngFor="let item of allEmployees">
+              {{item.names}} {{item.last_names}}
+            </mat-option>
+          </mat-select>
+          <mat-error>Este campo es obligatorio</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Fecha</mat-label>
+          <input matInput [matDatepicker]="picker2" placeholder="" formControlName="date">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2 color="primary"></mat-datepicker>
+          <mat-error>Este campo es obligatorio</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Observación</mat-label>
+          <input type="text" placeholder="" matInput formControlName="observation">
+        </mat-form-field>
+
+        <mat-checkbox formControlName="status">Estado</mat-checkbox>
+      </div>
+    </div>
+    <div>
+      <button mat-raised-button color="primary" [disabled]="createAttendanceForm.invalid">Guardar</button>
+    </div>
+  </form>
+</div>
