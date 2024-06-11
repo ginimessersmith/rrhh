@@ -52,6 +52,16 @@ import { AllDeductionComponent } from './components/form/all-deduction/all-deduc
 import { AllDeductionBetweenDateComponent } from './components/form/all-deduction-between-date/all-deduction-between-date.component';
 import { AllDeductionByContractComponent } from './components/form/all-deduction-by-contract/all-deduction-by-contract.component';
 import { OneDeductionComponent } from './components/form/one-deduction/one-deduction.component';
+import { OneBonusComponent } from './components/form/one-bonus/one-bonus.component';
+import { AllBonusComponent } from './components/form/all-bonus/all-bonus.component';
+import { AllBonusBetweenDateComponent } from './components/form/all-bonus-between-date/all-bonus-between-date.component';
+import { AllBonusByContractComponent } from './components/form/all-bonus-by-contract/all-bonus-by-contract.component';
+import { CreateBonusComponent } from './components/form/create-bonus/create-bonus.component';
+import { CreateSettlementComponent } from './components/form/create-settlement/create-settlement.component';
+import { AllSettlementComponent } from './components/form/all-settlement/all-settlement.component';
+import { OneSettlementComponent } from './components/form/one-settlement/one-settlement.component';
+import { CreatePayrollComponent } from './components/form/create-payroll/create-payroll.component';
+import { AllPayrollComponent } from './components/form/all-payroll/all-payroll.component';
 import { CreateContractComponent } from './components/personal/create-contract/create-contract.component';
 import { AllContractComponent } from './components/personal/all-contract/all-contract.component';
 import { CreateAttendancesComponent } from './components/personal/create-attendances/create-attendances.component';
@@ -108,7 +118,17 @@ import { AllAttendancesComponent } from './components/personal/all-attendances/a
     AllContractComponent,
     AttendancesPageComponent,
     CreateAttendancesComponent,
-    AllAttendancesComponent
+    AllAttendancesComponent,
+    OneBonusComponent,
+    AllBonusComponent,
+    AllBonusBetweenDateComponent,
+    AllBonusByContractComponent,
+    CreateBonusComponent,
+    CreateSettlementComponent,
+    AllSettlementComponent,
+    OneSettlementComponent,
+    CreatePayrollComponent,
+    AllPayrollComponent
   ],
   imports: [
     CommonModule,

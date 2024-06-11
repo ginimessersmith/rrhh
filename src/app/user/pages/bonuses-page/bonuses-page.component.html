@@ -1,1 +1,47 @@
-<p>bonuses-page works!</p>
+<h2>Bonus</h2>
+<mat-divider></mat-divider>
+<div *ngIf="!viewOneBonus" class="mt-2">
+  <mat-tab-group animationDuration="500ms">
+
+    <mat-tab label="Guardar y ver Bonos">
+      <div>
+        <div class="d-flex justify-content-end gap-5 p-2">
+          <div class="d-flex gap-1">
+            <mat-icon *ngIf="viewAllBonus">visibility</mat-icon>
+            <mat-icon *ngIf="!viewAllBonus">visibility_off</mat-icon>
+            <h4>LISTA</h4>
+          </div>
+
+          <div>
+            <mat-slide-toggle [checked]="viewAllBonus" (change)="changeSlideToggle()"></mat-slide-toggle>
+          </div>
+
+        </div>
+        <div class="components-container">
+          <user-form-create-bonus [allContracts]="allContracts"
+            (allBonusEmit)="changeAllBonus($event)"></user-form-create-bonus>
+
+          <user-form-all-bonus [allBonus]="allBonus" [viewList]="viewAllBonus"
+            (idBonusEmit)="changeIdBonus($event)"></user-form-all-bonus>
+
+        </div>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Bonos por fechas">
+      <user-form-all-bonus-between-date></user-form-all-bonus-between-date>
+    </mat-tab>
+
+    <mat-tab label="Bonos por contrato">
+      <user-form-all-bonus-by-contract
+      [allContract]="allContracts"
+      ></user-form-all-bonus-by-contract>
+    </mat-tab>
+
+  </mat-tab-group>
+</div>
+
+<div *ngIf="viewOneBonus">
+  <user-form-one-bonus [bonus]="bonus" (viewOneBonusEmit)="changeViewOneBonus($event)">
+  </user-form-one-bonus>
+</div>

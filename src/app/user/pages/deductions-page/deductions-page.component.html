@@ -3,7 +3,7 @@
 <div *ngIf="!viewOneDeduction" class="mt-2">
   <mat-tab-group animationDuration="500ms">
 
-    <mat-tab label="Guardar y ver todas los Descuentos">
+    <mat-tab label="Guardar y ver todos los Descuentos">
       <div class="d-flex justify-content-end gap-5 p-2">
         <div class="d-flex gap-1">
           <mat-icon *ngIf="viewList">visibility</mat-icon>
@@ -18,8 +18,10 @@
         [allContracts]="allContract"
         (allDeductionsEmit)="changeAllDeductions($event)"
         ></user-form-create-deduction>
-        <user-form-all-deduction [allDeductions]="allDeduction" [viewList]="viewList"
-          (idDeductionEmit)="changeIdDeduction($event)"></user-form-all-deduction>
+        <user-form-all-deduction
+        [allDeductions]="allDeduction"
+        [viewList]="viewList"
+        (idDeductionEmit)="changeIdDeduction($event)"></user-form-all-deduction>
       </div>
 
     </mat-tab>

@@ -1,1 +1,20 @@
-<p>payrolls-page works!</p>
+<h2>Nomina de Sueldos</h2>
+<mat-divider></mat-divider>
+<div>
+  <mat-tab-group animationDuration="500ms">
+
+    <mat-tab label="Guardar Nomina de Sueldo">
+      <user-form-create-payroll
+      [allManagement]="allManagement"
+      [allPeriods]="allPeriods"
+      ></user-form-create-payroll>
+    </mat-tab>
+
+    <mat-tab label="Lista de Nominas de Sueldo">
+      <user-form-all-payroll
+      [allPayrolls]="allPayrolls"
+      ></user-form-all-payroll>
+    </mat-tab>
+
+  </mat-tab-group>
+</div>

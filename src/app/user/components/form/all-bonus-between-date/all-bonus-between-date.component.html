@@ -1,0 +1,92 @@
+<div class="mt-2">
+  <div class="">
+    <form
+    [formGroup]="allBonusForm"
+    (ngSubmit)="onBonusByDate()"
+    action=""
+    >
+      <div class="d-flex gap-5 justify-content-between align-items-center">
+        <div class="d-flex gap-1">
+          <mat-form-field>
+            <mat-label>Fecha</mat-label>
+            <input matInput [matDatepicker]="picker1" placeholder="" formControlName="start">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1 color="accent"></mat-datepicker>
+            <mat-error>Este campo es obligatorio</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Fecha</mat-label>
+            <input matInput [matDatepicker]="picker2" placeholder="" formControlName="end">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2 color="primary"></mat-datepicker>
+            <mat-error>Este campo es obligatorio</mat-error>
+          </mat-form-field>
+        </div>
+
+        <button type="submit" mat-raised-button color="primary" [disabled]="allBonusForm.invalid">Ver
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="mt-2">
+    <table mat-table [dataSource]="allBonusByDate" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef>Monto</th>
+        <td mat-cell *matCellDef="let bonus">{{bonus.amount}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef>Descripcion</th>
+        <td mat-cell *matCellDef="let bonus">{{bonus.description}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="contract_start_date">
+        <th mat-header-cell *matHeaderCellDef>Inicio del contrato</th>
+        <td mat-cell *matCellDef="let bonus">{{bonus.contract.start_date |date}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="contract_end_date">
+        <th mat-header-cell *matHeaderCellDef>Fin del contrato</th>
+        <td mat-cell *matCellDef="let bonus">{{bonus.contract.end_date |date}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef>Cargo</th>
+        <td mat-cell *matCellDef="let bonus">{{bonus.contract.position.position}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="employee">
+        <th mat-header-cell *matHeaderCellDef>Empleado</th>
+        <td mat-cell *matCellDef="let bonus">{{bonus.contract.employee.names}}
+          {{bonus.contract.employee.last_names}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="department">
+        <th mat-header-cell *matHeaderCellDef>Departamento</th>
+        <td mat-cell *matCellDef="let bonus">{{bonus.contract.position.departmentBranch.department.department}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="branch">
+        <th mat-header-cell *matHeaderCellDef>Sucursal</th>
+        <td mat-cell *matCellDef="let bonus">{{bonus.contract.position.departmentBranch.branch.branch}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="contract_type">
+        <th mat-header-cell *matHeaderCellDef>Tipo de contrato</th>
+        <td mat-cell *matCellDef="let bonus">{{bonus.contract.contractType.type}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns:displayColumns;"></tr>
+
+    </table>
+  </div>
+</div>
+

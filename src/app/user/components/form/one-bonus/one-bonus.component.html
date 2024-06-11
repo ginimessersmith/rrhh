@@ -1,0 +1,60 @@
+<div class="mt-2">
+  <button mat-mini-fab color="primary" (click)="emitValue()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+</div>
+
+<div class="mt-4 d-flex justify-content-center align-items-center ">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Informacion sobre el Bono</mat-card-title>
+      <mat-card-subtitle><strong>Monto:</strong> {{bonus.amount}}</mat-card-subtitle>
+      <mat-card-subtitle><strong>Descripcion:</strong> {{bonus.description}}</mat-card-subtitle>
+      <mat-card-subtitle><strong>Fecha:</strong> {{bonus.date|date}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-divider class="my-1"></mat-divider>
+      <div class="d-flex gap-3">
+
+        <div>
+          <h3><strong>Especificacion del Empleado.</strong></h3>
+          <p><strong>Nombre:</strong> {{bonus.contract.employee.names}}</p>
+          <p><strong>Apellido:</strong> {{bonus.contract.employee.last_names}}</p>
+          <p><strong>Genero:</strong> {{bonus.contract.employee.genre}}</p>
+          <p><strong>Carnet:</strong> {{bonus.contract.employee.ci}}</p>
+          <p><strong>Telefono:</strong> {{bonus.contract.employee.cellphone}}</p>
+          <p><strong>Direccion:</strong> {{bonus.contract.employee.address}}</p>
+          <p><strong>Nacimiento:</strong> {{bonus.contract.employee.birthdate|date}}</p>
+          <p><strong>Codigo:</strong> {{bonus.contract.employee.code}}</p>
+        </div>
+
+        <mat-divider [vertical]="true"></mat-divider>
+
+        <div>
+          <h3><strong>Especificacion del Contrato.</strong></h3>
+          <p><strong>Fecha de Inicio del Contrato:</strong> {{bonus.contract.start_date|date}}</p>
+          <p><strong>Fecha de Finalizacion del Contrato:</strong> {{bonus.contract.end_date|date}}</p>
+          <p><strong>Tipo de Contrato:</strong> {{bonus.contract.contractType.type}}</p>
+          <p><strong>Salario base:</strong> {{bonus.contract.base_salary}}</p>
+        </div>
+
+        <mat-divider [vertical]="true"></mat-divider>
+
+        <div>
+          <h3><strong>Especificacion del Cargo.</strong></h3>
+          <p><strong>Cargo:</strong> {{bonus.contract.position.position}}</p>
+          <h4><strong>Departamento y Sucursal</strong></h4>
+          <p><strong>Departamento:</strong> {{bonus.contract.position.departmentBranch.department.department}}</p>
+          <p><strong>Sucursal:</strong> {{bonus.contract.position.departmentBranch.branch.branch}}</p>
+        </div>
+
+      </div>
+
+    </mat-card-content>
+    <mat-card-footer>
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </mat-card-footer>
+  </mat-card>
+
+</div>
+
