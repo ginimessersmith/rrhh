@@ -62,6 +62,8 @@ import { AllSettlementComponent } from './components/form/all-settlement/all-set
 import { OneSettlementComponent } from './components/form/one-settlement/one-settlement.component';
 import { CreatePayrollComponent } from './components/form/create-payroll/create-payroll.component';
 import { AllPayrollComponent } from './components/form/all-payroll/all-payroll.component';
+import { CreateContractComponent } from './components/personal/create-contract/create-contract.component';
+import { AllContractComponent } from './components/personal/all-contract/all-contract.component';
 
 
 @NgModule({
@@ -110,6 +112,8 @@ import { AllPayrollComponent } from './components/form/all-payroll/all-payroll.c
     AllDeductionBetweenDateComponent,
     AllDeductionByContractComponent,
     OneDeductionComponent,
+    CreateContractComponent,
+    AllContractComponent,
     OneBonusComponent,
     AllBonusComponent,
     AllBonusBetweenDateComponent,

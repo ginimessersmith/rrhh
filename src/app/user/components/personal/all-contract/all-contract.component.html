@@ -1,0 +1,47 @@
+<div *ngIf="viewList">
+  <table mat-table [dataSource]="allContracts" class="mat-elevation-z8">
+    <ng-container matColumnDef="employee">
+      <th mat-header-cell *matHeaderCellDef>Empleado</th>
+      <td mat-cell *matCellDef="let contract">{{contract.employee.names}} {{contract.employee.last_names}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="start_date">
+      <th mat-header-cell *matHeaderCellDef>Inicio del Contrato</th>
+      <td mat-cell *matCellDef="let contract">{{contract.start_date}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="end_date">
+      <th mat-header-cell *matHeaderCellDef>Finalización del Contrato</th>
+      <td mat-cell *matCellDef="let contract">{{contract.end_date}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="base_salary">
+      <th mat-header-cell *matHeaderCellDef>Sueldo Básico</th>
+      <td mat-cell *matCellDef="let contract">{{contract.base_salary}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="contract_type">
+      <th mat-header-cell *matHeaderCellDef>Tipo de Contrato</th>
+      <td mat-cell *matCellDef="let contract">{{contract.contractType.type}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef>Cargo</th>
+      <td mat-cell *matCellDef="let contract">{{contract.position.position}}</td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Opciones</th>
+      <td mat-cell *matCellDef="let contract">
+      <button mat-mini-fab color="primary" (click)="sendIdContract(contract.id)">
+        <mat-icon>search</mat-icon>
+      </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns:displayColumns;"></tr>
+
+  </table>
+</div>
