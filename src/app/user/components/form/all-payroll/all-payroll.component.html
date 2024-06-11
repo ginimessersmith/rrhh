@@ -1,0 +1,63 @@
+<div>
+  <table mat-table [dataSource]="allPayrolls" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="names">
+      <th mat-header-cell *matHeaderCellDef>Empleado</th>
+      <td mat-cell *matCellDef="let payroll">{{payroll.contract.employee.names}} {{payroll.contract.employee.last_names}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef>Direccion del Empleado</th>
+      <td mat-cell *matCellDef="let payroll">{{payroll.contract.employee.address}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="cellphone">
+      <th mat-header-cell *matHeaderCellDef>Telefono</th>
+      <td mat-cell *matCellDef="let payroll">{{payroll.contract.employee.cellphone}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="cashPayable">
+      <th mat-header-cell *matHeaderCellDef>Efectivo a Pagar</th>
+      <td mat-cell *matCellDef="let payroll">{{payroll.cashPayable}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="totalBonuses">
+      <th mat-header-cell *matHeaderCellDef>Bonificaciones totales</th>
+      <td mat-cell *matCellDef="let payroll">{{payroll.totalBonuses}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="totalDeductions">
+      <th mat-header-cell *matHeaderCellDef>Deducciones totales</th>
+      <td mat-cell *matCellDef="let payroll">{{payroll.totalDeductions}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="baseSalary">
+      <th mat-header-cell *matHeaderCellDef>Salario base</th>
+      <td mat-cell *matCellDef="let payroll">{{payroll.baseSalary}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef>Cargo</th>
+      <td mat-cell *matCellDef="let payroll">{{payroll.contract.position.position}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="contractType">
+      <th mat-header-cell *matHeaderCellDef>Tipo de contrato</th>
+      <td mat-cell *matCellDef="let payroll">{{payroll.contract.contractType.type}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="period">
+      <th mat-header-cell *matHeaderCellDef>Periodo</th>
+      <td mat-cell *matCellDef="let payroll">{{payroll.period.month}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="management_year">
+      <th mat-header-cell *matHeaderCellDef>Gestion</th>
+      <td mat-cell *matCellDef="let payroll">{{payroll.management.year}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns:displayColumns"></tr>
+
+  </table>
+</div>
