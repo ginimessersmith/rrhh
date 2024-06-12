@@ -1,0 +1,28 @@
+<div *ngIf="viewList">
+  <table mat-table [dataSource]="allApplicants" class="mat-elevation-z8" matSort>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombres y Apellidos </th>
+      <td mat-cell *matCellDef="let applicant"> {{applicant.names}} {{applicant.last_names}} </td>
+    </ng-container>
+    <ng-container matColumnDef="cellphone">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Teléfono </th>
+      <td mat-cell *matCellDef="let applicant"> {{applicant.cellphone}} </td>
+    </ng-container>
+    <ng-container matColumnDef="profession">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Profesión </th>
+      <td mat-cell *matCellDef="let applicant"> {{applicant.profession.profession}} </td>
+    </ng-container>
+    <ng-container matColumnDef="curriculum">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Curriculum </th>
+      <td mat-cell *matCellDef="let applicant">
+        <button mat-icon-button (click)="downloadFile(applicant.curriculum)">
+          <mat-icon>cloud_download</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns:displayedColumns;"></tr>
+
+  </table>
+</div>

@@ -1,1 +1,8 @@
-<p>applicants-page works!</p>
+<div class="mt-5">
+  <h2>Postulantes</h2>
+  <mat-divider></mat-divider>
+  <div *ngIf="!viewOneApplicant" class="mt-2">
+    <user-vacancies-all-applicants [allApplicants]="allApplicants" [viewList]="viewList"
+    (idApplicantEmit)="changeIdApplicant($event)"></user-vacancies-all-applicants>
+  </div>
+</div>

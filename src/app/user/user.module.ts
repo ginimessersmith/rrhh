@@ -68,6 +68,8 @@ import { CreateAttendancesComponent } from './components/personal/create-attenda
 import { AllAttendancesComponent } from './components/personal/all-attendances/all-attendances.component';
 import { AllVacanciesComponent } from './components/vacancies/all-vacancies/all-vacancies.component';
 import { CreateVacanciesComponent } from './components/vacancies/create-vacancies/create-vacancies.component';
+import { CreateApplicantsComponent } from './components/vacancies/create-applicants/create-applicants.component';
+import { AllApplicantsComponent } from './components/vacancies/all-applicants/all-applicants.component';
 
 
 @NgModule({
@@ -132,7 +134,9 @@ import { CreateVacanciesComponent } from './components/vacancies/create-vacancie
     CreatePayrollComponent,
     AllPayrollComponent,
     AllVacanciesComponent,
-    CreateVacanciesComponent
+    CreateVacanciesComponent,
+    CreateApplicantsComponent,
+    AllApplicantsComponent
   ],
   imports: [
     CommonModule,
