@@ -1,1 +1,67 @@
-<p>applications-page works!</p>
+<div class="mat-elevation-z8 mt-5">
+  <h2 class="padding-20">Postulaciones</h2>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+      <!-- Title Column -->
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Convocatoria </th>
+        <td mat-cell *matCellDef="let application"> {{application.vacancy.title}} </td>
+      </ng-container>
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Cargo </th>
+        <td mat-cell *matCellDef="let application"> {{application.vacancy.position.position}} </td>
+      </ng-container>
+
+      <!-- Names Column -->
+      <ng-container matColumnDef="names">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Postulante </th>
+        <td mat-cell *matCellDef="let application"> {{application.applicant.names}} {{application.applicant.last_names}} </td>
+      </ng-container>
+
+      <!-- Cellphone Column -->
+      <ng-container matColumnDef="cellphone">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Teléfono </th>
+        <td mat-cell *matCellDef="let application"> {{application.applicant.cellphone}} </td>
+      </ng-container>
+
+      <!-- Curriculum Column -->
+      <ng-container matColumnDef="curriculum">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Curriculum </th>
+        <td mat-cell *matCellDef="let application">
+          <button mat-icon-button color="primary" (click)="downloadFile(application.applicant.curriculum)">
+            <mat-icon>download</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado </th>
+        <td mat-cell *matCellDef="let application">
+          <mat-icon color="primary" *ngIf="application.status">check</mat-icon>
+          <mat-icon color="warn" *ngIf="!application.status">close</mat-icon>
+        </td>
+      </ng-container>
+      <!-- Options Column -->
+      <ng-container matColumnDef="options">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let application">
+          <ng-container *ngIf="application.status">
+            <!-- Botones de acciones solo si el estado es true -->
+            <button mat-icon-button color="warn" (click)="disableApplication(application.id)">
+              <mat-icon>block</mat-icon>
+            </button>
+            <button mat-icon-button color="accent" (click)="convertToEmployee(application.id)">
+              <mat-icon>person_add</mat-icon>
+            </button>
+          </ng-container>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>
