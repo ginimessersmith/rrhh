@@ -66,6 +66,8 @@ import { CreateContractComponent } from './components/personal/create-contract/c
 import { AllContractComponent } from './components/personal/all-contract/all-contract.component';
 import { CreateAttendancesComponent } from './components/personal/create-attendances/create-attendances.component';
 import { AllAttendancesComponent } from './components/personal/all-attendances/all-attendances.component';
+import { AllVacanciesComponent } from './components/vacancies/all-vacancies/all-vacancies.component';
+import { CreateVacanciesComponent } from './components/vacancies/create-vacancies/create-vacancies.component';
 
 
 @NgModule({
@@ -128,7 +130,9 @@ import { AllAttendancesComponent } from './components/personal/all-attendances/a
     AllSettlementComponent,
     OneSettlementComponent,
     CreatePayrollComponent,
-    AllPayrollComponent
+    AllPayrollComponent,
+    AllVacanciesComponent,
+    CreateVacanciesComponent
   ],
   imports: [
     CommonModule,
