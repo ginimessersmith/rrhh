@@ -1,0 +1,46 @@
+<div>
+  <table mat-table [dataSource]="allRequest">
+
+    <ng-container matColumnDef="emailPostulant">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let request">{{request.emailPostulant}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="namePostulant">
+      <th mat-header-cell *matHeaderCellDef>Nombre del postulante</th>
+      <td mat-cell *matCellDef="let request">{{request.namePostulant}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="curriculumVitae">
+      <th mat-header-cell *matHeaderCellDef>Curriculum Vitae</th>
+      <td mat-cell *matCellDef="let request">
+        <a [href]="request.curriculumVitae" target="_blank">
+          <button mat-raised-button>
+            Ver CV
+          </button>
+        </a>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="score">
+      <th mat-header-cell *matHeaderCellDef>Puntaje de acierto</th>
+      <td mat-cell *matCellDef="let request">{{request.validation?.score}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="success_percentage">
+      <th mat-header-cell *matHeaderCellDef>Porcentaje</th>
+      <td mat-cell *matCellDef="let request">{{request.validation?.success_percentage}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="opinion">
+      <th mat-header-cell *matHeaderCellDef>Opinion</th>
+      <td mat-cell *matCellDef="let request">{{request.validation?.opinion}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns:displayColumns;"></tr>
+
+  </table>
+  <!-- {{allRequest|json}} -->
+</div>
+

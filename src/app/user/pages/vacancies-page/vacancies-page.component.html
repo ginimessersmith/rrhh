@@ -1,17 +1,16 @@
-<h2>Asistencias</h2>
+<h2>Convocatorias</h2>
 <mat-divider></mat-divider>
 <div *ngIf="!viewOneVacancy" class="mt-2">
   <mat-tab-group animationDuration="500ms">
 
     <mat-tab label="Guardar y Ver todas las Convocatorias">
       <div class="d-flex justify-content-end gap-5 p-2">
-        <div class="d-flex gap-1">
+        <div class="d-flex gap-2">
           <mat-icon *ngIf="viewList">visibility</mat-icon>
           <mat-icon *ngIf="!viewList">visibility_off</mat-icon>
           <h4>LISTA</h4>
+          <mat-slide-toggle [checked]="viewList" (change)="changeSlideToggle()"></mat-slide-toggle>
         </div>
-
-        <mat-slide-toggle [checked]="viewList" (change)="changeSlideToggle()"></mat-slide-toggle>
       </div>
       <div class="mt-2 d-flex justify-content-around components-container">
         <user-vacancies-create-vacancies
@@ -22,6 +21,12 @@
         <user-vacancies-all-vacancies [allVacancies]="allVacancies" [viewList]="viewList"
         (idVacancyEmit)="changeIdVacancy($event)"></user-vacancies-all-vacancies>
       </div>
+    </mat-tab>
+
+    <mat-tab label="Solicitudes desde la App">
+      <app-all-request-app
+      [allRequest]="allRequest"
+      ></app-all-request-app>
     </mat-tab>
   </mat-tab-group>
 </div>

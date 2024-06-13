@@ -70,6 +70,9 @@ import { AllVacanciesComponent } from './components/vacancies/all-vacancies/all-
 import { CreateVacanciesComponent } from './components/vacancies/create-vacancies/create-vacancies.component';
 import { CreateApplicantsComponent } from './components/vacancies/create-applicants/create-applicants.component';
 import { AllApplicantsComponent } from './components/vacancies/all-applicants/all-applicants.component';
+import { AllUsersComponent } from './components/user/all-users/all-users.component';
+import { OneUsersComponent } from './components/user/one-users/one-users.component';
+import { AllRequestAppComponent } from './components/vacancies/all-request-app/all-request-app.component';
 
 
 @NgModule({
@@ -136,7 +139,10 @@ import { AllApplicantsComponent } from './components/vacancies/all-applicants/al
     AllVacanciesComponent,
     CreateVacanciesComponent,
     CreateApplicantsComponent,
-    AllApplicantsComponent
+    AllApplicantsComponent,
+    AllUsersComponent,
+    OneUsersComponent,
+    AllRequestAppComponent
   ],
   imports: [
     CommonModule,
