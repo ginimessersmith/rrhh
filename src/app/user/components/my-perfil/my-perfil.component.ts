@@ -8,4 +8,8 @@ import { LoginResponseInterface } from 'src/app/auth/interfaces';
 })
 export class MyPerfilComponent {
   @Input() userData!: LoginResponseInterface
+
+  redirectDashboard(){
+    window.open('http://167.99.61.163:5000/', '_blank');
+  }
 }
